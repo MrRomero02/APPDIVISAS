@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.appcompat.widget.Toolbar
 import android.widget.Toast
 import android.content.Intent
 import com.example.proyecto4.databinding.ActivitySecondBinding
@@ -29,7 +30,12 @@ class SecondActivity : AppCompatActivity() {
         //4. Mostramos el mensaje de bienvenido
         binding.tvWelcome.text = "Bienvenido $username"
 
+
+
         // 5. Configuramos el boton logout
+        // Configura la Toolbar como ActionBar
+        val toolbar = findViewById<Toolbar>(R.id.toolbar) // Asegúrate de que el ID sea correcto.
+        setSupportActionBar(toolbar)
         binding.btnLogout.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
